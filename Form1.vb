@@ -1,4 +1,6 @@
-﻿Public Class frmMain
+﻿Imports System.Data.SqlServerCe
+
+Public Class frmMain
     'um...test?....I guess.'
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
