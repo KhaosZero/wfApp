@@ -39,6 +39,7 @@ Partial Class frmMain
         Me.Button1 = New System.Windows.Forms.Button()
         Me.staMain = New System.Windows.Forms.StatusStrip()
         Me.prgLoad = New System.Windows.Forms.ToolStripProgressBar()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.conMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.conMain.Panel1.SuspendLayout()
         Me.conMain.Panel2.SuspendLayout()
@@ -72,6 +73,7 @@ Partial Class frmMain
         'conMain.Panel2
         '
         Me.conMain.Panel2.BackColor = System.Drawing.SystemColors.Control
+        Me.conMain.Panel2.Controls.Add(Me.Label1)
         Me.conMain.Panel2.Controls.Add(Me.Button1)
         Me.conMain.Panel2.Controls.Add(Me.staMain)
         Me.conMain.Size = New System.Drawing.Size(617, 392)
@@ -218,6 +220,15 @@ Partial Class frmMain
         Me.prgLoad.Name = "prgLoad"
         Me.prgLoad.Size = New System.Drawing.Size(100, 16)
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(190, 138)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(221, 13)
+        Me.Label1.TabIndex = 9
+        Me.Label1.Text = "When I grow up, I want to be a dataset table!"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -257,5 +268,6 @@ Partial Class frmMain
     Friend WithEvents HelpToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuAbout As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuLog As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 
 End Class
