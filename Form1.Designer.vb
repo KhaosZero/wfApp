@@ -25,6 +25,9 @@ Partial Class frmMain
         Me.conMain = New System.Windows.Forms.SplitContainer()
         Me.lblKeyword = New System.Windows.Forms.Label()
         Me.mnuStrip = New System.Windows.Forms.MenuStrip()
+        Me.AboutToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChangelogToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuActivator = New System.Windows.Forms.Button()
         Me.txtKeyword = New System.Windows.Forms.TextBox()
         Me.lblLocation = New System.Windows.Forms.Label()
@@ -41,10 +44,14 @@ Partial Class frmMain
         Me.mnuLog = New System.Windows.Forms.ToolStripMenuItem()
         Me.prgLoad = New System.Windows.Forms.ToolStripProgressBar()
         Me.lstI = New System.Windows.Forms.ListBox()
+        Me.HelpToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChangeLogToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.conMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.conMain.Panel1.SuspendLayout()
         Me.conMain.Panel2.SuspendLayout()
         Me.conMain.SuspendLayout()
+        Me.mnuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'conMain
@@ -92,12 +99,32 @@ Partial Class frmMain
         '
         'mnuStrip
         '
+        Me.mnuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem1})
         Me.mnuStrip.Location = New System.Drawing.Point(0, 0)
         Me.mnuStrip.Name = "mnuStrip"
         Me.mnuStrip.Size = New System.Drawing.Size(617, 24)
         Me.mnuStrip.TabIndex = 9
         Me.mnuStrip.Text = "MenuStrip1"
         Me.mnuStrip.Visible = False
+        '
+        'AboutToolStripMenuItem1
+        '
+        Me.AboutToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem2, Me.ChangelogToolStripMenuItem1})
+        Me.AboutToolStripMenuItem1.Name = "AboutToolStripMenuItem1"
+        Me.AboutToolStripMenuItem1.Size = New System.Drawing.Size(44, 20)
+        Me.AboutToolStripMenuItem1.Text = "Help"
+        '
+        'AboutToolStripMenuItem2
+        '
+        Me.AboutToolStripMenuItem2.Name = "AboutToolStripMenuItem2"
+        Me.AboutToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
+        Me.AboutToolStripMenuItem2.Text = "&About"
+        '
+        'ChangelogToolStripMenuItem1
+        '
+        Me.ChangelogToolStripMenuItem1.Name = "ChangelogToolStripMenuItem1"
+        Me.ChangelogToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.ChangelogToolStripMenuItem1.Text = "&Changelog"
         '
         'MenuActivator
         '
@@ -238,6 +265,24 @@ Partial Class frmMain
         Me.lstI.Size = New System.Drawing.Size(608, 277)
         Me.lstI.TabIndex = 10
         '
+        'HelpToolStripMenuItem1
+        '
+        Me.HelpToolStripMenuItem1.Name = "HelpToolStripMenuItem1"
+        Me.HelpToolStripMenuItem1.Size = New System.Drawing.Size(44, 20)
+        Me.HelpToolStripMenuItem1.Text = "Help"
+        '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AboutToolStripMenuItem.Text = "&About..."
+        '
+        'ChangeLogToolStripMenuItem
+        '
+        Me.ChangeLogToolStripMenuItem.Name = "ChangeLogToolStripMenuItem"
+        Me.ChangeLogToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ChangeLogToolStripMenuItem.Text = "&Changelog..."
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -253,6 +298,8 @@ Partial Class frmMain
         Me.conMain.Panel2.PerformLayout()
         CType(Me.conMain, System.ComponentModel.ISupportInitialize).EndInit()
         Me.conMain.ResumeLayout(False)
+        Me.mnuStrip.ResumeLayout(False)
+        Me.mnuStrip.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -275,5 +322,11 @@ Partial Class frmMain
     Friend WithEvents mnuLog As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents lstInput As System.Windows.Forms.ListBox
     Friend WithEvents lstI As System.Windows.Forms.ListBox
+    Friend WithEvents HelpToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AboutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ChangeLogToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AboutToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AboutToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ChangelogToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
 
 End Class

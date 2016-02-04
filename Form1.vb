@@ -22,17 +22,6 @@ Public Class frmMain
         mnuStrip.Visible = True
     End Sub
 
-    Private Sub mnuAbout_Click(sender As Object, e As EventArgs) Handles mnuAbout.Click
-        'The About... sub menu within the toolbar can go here
-        MessageBox.Show("Created By Jane Gallego, and some other random, in Visual Studio" & vbNewLine & "Version: " & Application.ProductVersion, "", MessageBoxButtons.OK, MessageBoxIcon.Information)
-    End Sub
-
-
-    Private Sub mnuLog_Click(sender As Object, e As EventArgs) Handles mnuLog.Click
-        'Changes post-release will go here.
-        MessageBox.Show("Heh.. a Changelog? You're funny.", "Changelog", MessageBoxButtons.OK, MessageBoxIcon.Information)
-    End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         'TODO: 
         '- Make function that will accept a query and execute it: 
@@ -91,5 +80,13 @@ Public Class frmMain
 
         'So we have effectively Created a database, a table, test data, and read it all to a listbox using one button.
         'Go Visual Studio!
+    End Sub
+
+    Private Sub AboutToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem2.Click
+        MessageBox.Show("Created By Jane Gallego, and some other random, in Visual Studio" & vbNewLine & "Version: " & Application.ProductVersion, "About", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
+    Private Sub ChangelogToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ChangelogToolStripMenuItem1.Click
+        MessageBox.Show("There are no changes to log yet :/", "Changelog", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 End Class
