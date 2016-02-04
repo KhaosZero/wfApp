@@ -25,9 +25,6 @@ Partial Class frmMain
         Me.conMain = New System.Windows.Forms.SplitContainer()
         Me.lblKeyword = New System.Windows.Forms.Label()
         Me.mnuStrip = New System.Windows.Forms.MenuStrip()
-        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuAbout = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuLog = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuActivator = New System.Windows.Forms.Button()
         Me.txtKeyword = New System.Windows.Forms.TextBox()
         Me.lblLocation = New System.Windows.Forms.Label()
@@ -36,16 +33,19 @@ Partial Class frmMain
         Me.cbType = New System.Windows.Forms.ComboBox()
         Me.lblApplication = New System.Windows.Forms.Label()
         Me.cbApp = New System.Windows.Forms.ComboBox()
+        Me.lstInput = New System.Windows.Forms.ListBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.staMain = New System.Windows.Forms.StatusStrip()
+        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuAbout = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuLog = New System.Windows.Forms.ToolStripMenuItem()
         Me.prgLoad = New System.Windows.Forms.ToolStripProgressBar()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lstI = New System.Windows.Forms.ListBox()
         CType(Me.conMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.conMain.Panel1.SuspendLayout()
         Me.conMain.Panel2.SuspendLayout()
         Me.conMain.SuspendLayout()
-        Me.mnuStrip.SuspendLayout()
-        Me.staMain.SuspendLayout()
         Me.SuspendLayout()
         '
         'conMain
@@ -73,6 +73,7 @@ Partial Class frmMain
         'conMain.Panel2
         '
         Me.conMain.Panel2.BackColor = System.Drawing.SystemColors.Control
+        Me.conMain.Panel2.Controls.Add(Me.lstInput)
         Me.conMain.Panel2.Controls.Add(Me.Label1)
         Me.conMain.Panel2.Controls.Add(Me.Button1)
         Me.conMain.Panel2.Controls.Add(Me.staMain)
@@ -93,32 +94,12 @@ Partial Class frmMain
         '
         'mnuStrip
         '
-        Me.mnuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HelpToolStripMenuItem})
         Me.mnuStrip.Location = New System.Drawing.Point(0, 0)
         Me.mnuStrip.Name = "mnuStrip"
         Me.mnuStrip.Size = New System.Drawing.Size(617, 24)
         Me.mnuStrip.TabIndex = 9
         Me.mnuStrip.Text = "MenuStrip1"
         Me.mnuStrip.Visible = False
-        '
-        'HelpToolStripMenuItem
-        '
-        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuAbout, Me.mnuLog})
-        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
-        Me.HelpToolStripMenuItem.Text = "&Help"
-        '
-        'mnuAbout
-        '
-        Me.mnuAbout.Name = "mnuAbout"
-        Me.mnuAbout.Size = New System.Drawing.Size(147, 22)
-        Me.mnuAbout.Text = "&About..."
-        '
-        'mnuLog
-        '
-        Me.mnuLog.Name = "mnuLog"
-        Me.mnuLog.Size = New System.Drawing.Size(147, 22)
-        Me.mnuLog.Text = "&Change Log..."
         '
         'MenuActivator
         '
@@ -197,6 +178,26 @@ Partial Class frmMain
         Me.cbApp.Size = New System.Drawing.Size(137, 21)
         Me.cbApp.TabIndex = 0
         '
+        'lstInput
+        '
+        Me.lstInput.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lstInput.FormattingEnabled = True
+        Me.lstInput.Location = New System.Drawing.Point(5, 44)
+        Me.lstInput.Name = "lstInput"
+        Me.lstInput.Size = New System.Drawing.Size(608, 277)
+        Me.lstInput.TabIndex = 10
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(184, 14)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(221, 13)
+        Me.Label1.TabIndex = 9
+        Me.Label1.Text = "When I grow up, I want to be a dataset table!"
+        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(483, 14)
@@ -208,26 +209,45 @@ Partial Class frmMain
         '
         'staMain
         '
-        Me.staMain.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.prgLoad})
         Me.staMain.Location = New System.Drawing.Point(0, 306)
         Me.staMain.Name = "staMain"
         Me.staMain.Size = New System.Drawing.Size(617, 22)
         Me.staMain.TabIndex = 7
         Me.staMain.Visible = False
         '
+        'HelpToolStripMenuItem
+        '
+        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
+        Me.HelpToolStripMenuItem.Text = "&Help"
+        '
+        'mnuAbout
+        '
+        Me.mnuAbout.Name = "mnuAbout"
+        Me.mnuAbout.Size = New System.Drawing.Size(152, 22)
+        Me.mnuAbout.Text = "&About..."
+        '
+        'mnuLog
+        '
+        Me.mnuLog.Name = "mnuLog"
+        Me.mnuLog.Size = New System.Drawing.Size(152, 22)
+        Me.mnuLog.Text = "&Change Log..."
+        '
         'prgLoad
         '
         Me.prgLoad.Name = "prgLoad"
         Me.prgLoad.Size = New System.Drawing.Size(100, 16)
         '
-        'Label1
+        'lstI
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(190, 138)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(221, 13)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "When I grow up, I want to be a dataset table!"
+        Me.lstI.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lstI.FormattingEnabled = True
+        Me.lstI.Location = New System.Drawing.Point(5, 44)
+        Me.lstI.Name = "lstI"
+        Me.lstI.Size = New System.Drawing.Size(608, 277)
+        Me.lstI.TabIndex = 10
         '
         'frmMain
         '
@@ -244,10 +264,6 @@ Partial Class frmMain
         Me.conMain.Panel2.PerformLayout()
         CType(Me.conMain, System.ComponentModel.ISupportInitialize).EndInit()
         Me.conMain.ResumeLayout(False)
-        Me.mnuStrip.ResumeLayout(False)
-        Me.mnuStrip.PerformLayout()
-        Me.staMain.ResumeLayout(False)
-        Me.staMain.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -269,5 +285,7 @@ Partial Class frmMain
     Friend WithEvents mnuAbout As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuLog As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lstInput As System.Windows.Forms.ListBox
+    Friend WithEvents lstI As System.Windows.Forms.ListBox
 
 End Class
