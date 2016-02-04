@@ -34,7 +34,6 @@ Partial Class frmMain
         Me.lblApplication = New System.Windows.Forms.Label()
         Me.cbApp = New System.Windows.Forms.ComboBox()
         Me.lstInput = New System.Windows.Forms.ListBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.staMain = New System.Windows.Forms.StatusStrip()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -74,7 +73,6 @@ Partial Class frmMain
         '
         Me.conMain.Panel2.BackColor = System.Drawing.SystemColors.Control
         Me.conMain.Panel2.Controls.Add(Me.lstInput)
-        Me.conMain.Panel2.Controls.Add(Me.Label1)
         Me.conMain.Panel2.Controls.Add(Me.Button1)
         Me.conMain.Panel2.Controls.Add(Me.staMain)
         Me.conMain.Size = New System.Drawing.Size(617, 392)
@@ -189,15 +187,6 @@ Partial Class frmMain
         Me.lstInput.Size = New System.Drawing.Size(608, 277)
         Me.lstInput.TabIndex = 10
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(184, 14)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(221, 13)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "When I grow up, I want to be a dataset table!"
-        '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(483, 14)
@@ -284,7 +273,6 @@ Partial Class frmMain
     Friend WithEvents HelpToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuAbout As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuLog As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents lstInput As System.Windows.Forms.ListBox
     Friend WithEvents lstI As System.Windows.Forms.ListBox
 
