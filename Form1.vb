@@ -23,60 +23,23 @@ Public Class frmMain
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        'TODO: 
-        '- Make function that will accept a query and execute it: 
-        'Public Function NewQuery(query As String)
-        '- Make a function that will open a reader and return the read data:
-        'Public Function Read(query As String)
-        '- Move all this crap from button code
+        'Make a new database
+        CreateDB("")
+        'Lets insert some test data
+        NewQuery("INSERT INTO tblMain (Application, Type, Location) values ('Netcare', 'Employee', 'RAH')")
 
-        'So here's what we do for now:
-        'Creating the connection AND the database at the same time
-        Dim conDB As SQLiteConnection = New SQLiteConnection("InfoDB.sqlite") '<- Database
-        'Create datasource connection
-        Dim con = New SQLiteConnection("Data Source=InfoDB.sqlite;Version=3")
-        'Now OPEN
-        con.Open()
-        'Create query to execute, this query makes the table
-        Dim sql As String = "CREATE TABLE IF NOT EXISTS tblMain (Application VARCHAR(20), Type VARCHAR(20), Location VARCHAR(20))"
-
-        'Create our commands using the connection and the sql query
-        Dim cmd1 As SQLiteCommand = New SQLiteCommand(sql, con)
-        'Execute
-        Try
-            cmd1.ExecuteNonQuery()
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-
-        'Lets make a new query to insert some test data
-        sql = "INSERT INTO tblMain (Application, Type, Location) values ('Netcare', 'Employee', 'RAH')"
-        Dim cmd2 As SQLiteCommand = New SQLiteCommand(sql, con)
-        cmd2.ExecuteNonQuery()
-
-        'Make another query to ask the table for data
-        sql = "SELECT * FROM tblMain order by Application ASC"
-        Dim cmd3 As SQLiteCommand = New SQLiteCommand(sql, con)
-
-        'Make the reader to read the reply from the above query
-        Dim reader As SQLiteDataReader = cmd3.ExecuteReader
         'Just incase
         lstInput.Items.Clear()
 
-        'Now we read the data into the listbox
-        While (reader.Read())
-            lstInput.Items.Add("Application:   " & reader("Application"))
-            lstInput.Items.Add("Type:   " & reader("Type"))
-            lstInput.Items.Add("Location:   " & reader("Location"))
-        End While
+        'Now we read the data into the listbox, we can use our awesome read function!
+        For Each dat As Dictionary(Of String, Object) In Read("SELECT * FROM tblMain order by Application ASC")
+            lstInput.Items.Add("Application:   " & dat("Application"))
+            lstInput.Items.Add("Type:   " & dat("Type"))
+            lstInput.Items.Add("Location:   " & dat("Location"))
+        Next
 
         'For testing, we dont want to keep the table on app close.
-        sql = "DROP TABLE IF EXISTS tblMain"
-        Dim cmd4 As SQLiteCommand = New SQLiteCommand(sql, con)
-        cmd4.ExecuteNonQuery()
-
-        'Dont forget to close the connection!
-        con.Close()
+        NewQuery("DROP TABLE IF EXISTS tblMain")
 
         'So we have effectively Created a database, a table, test data, and read it all to a listbox using one button.
         'Go Visual Studio!

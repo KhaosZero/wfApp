@@ -117,13 +117,13 @@ Partial Class frmMain
         'AboutToolStripMenuItem2
         '
         Me.AboutToolStripMenuItem2.Name = "AboutToolStripMenuItem2"
-        Me.AboutToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
+        Me.AboutToolStripMenuItem2.Size = New System.Drawing.Size(132, 22)
         Me.AboutToolStripMenuItem2.Text = "&About"
         '
         'ChangelogToolStripMenuItem1
         '
         Me.ChangelogToolStripMenuItem1.Name = "ChangelogToolStripMenuItem1"
-        Me.ChangelogToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.ChangelogToolStripMenuItem1.Size = New System.Drawing.Size(132, 22)
         Me.ChangelogToolStripMenuItem1.Text = "&Changelog"
         '
         'MenuActivator
@@ -141,6 +141,7 @@ Partial Class frmMain
         '
         Me.txtKeyword.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtKeyword.Enabled = False
         Me.txtKeyword.Location = New System.Drawing.Point(12, 28)
         Me.txtKeyword.Name = "txtKeyword"
         Me.txtKeyword.Size = New System.Drawing.Size(114, 20)
@@ -159,7 +160,10 @@ Partial Class frmMain
         'cbLoc
         '
         Me.cbLoc.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cbLoc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.cbLoc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cbLoc.FormattingEnabled = True
+        Me.cbLoc.Items.AddRange(New Object() {"Edmonton Zone"})
         Me.cbLoc.Location = New System.Drawing.Point(464, 28)
         Me.cbLoc.Name = "cbLoc"
         Me.cbLoc.Size = New System.Drawing.Size(142, 21)
@@ -178,7 +182,10 @@ Partial Class frmMain
         'cbType
         '
         Me.cbType.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cbType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.cbType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cbType.FormattingEnabled = True
+        Me.cbType.Items.AddRange(New Object() {"Employee", "Community"})
         Me.cbType.Location = New System.Drawing.Point(310, 28)
         Me.cbType.Name = "cbType"
         Me.cbType.Size = New System.Drawing.Size(137, 21)
@@ -197,7 +204,10 @@ Partial Class frmMain
         'cbApp
         '
         Me.cbApp.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cbApp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.cbApp.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.cbApp.FormattingEnabled = True
+        Me.cbApp.Items.AddRange(New Object() {"Netcare"})
         Me.cbApp.Location = New System.Drawing.Point(155, 28)
         Me.cbApp.Name = "cbApp"
         Me.cbApp.Size = New System.Drawing.Size(137, 21)
